@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DevvelaTech</string>
+    <string name="loading">Загрузка…</string>
+    <string name="button.close">Закрыть</string>
+    <string name="dialog.name_input.hint">Введите название точки</string>
+
+    <string name="menu.list_item">Список точек</string>
+    <string name="menu.list.asc">A-z</string>
+    <string name="menu.list.desc">Z-a</string>
+
+    <string name="points.title">Список точек</string>
+    <string name="points.button.delete">Удалить</string>
+    <string name="points.hint.empty">Список точек пустой</string>
+
+</resources>
