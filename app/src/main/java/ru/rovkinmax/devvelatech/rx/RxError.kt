@@ -3,8 +3,8 @@ package ru.rovkinmax.devvelatech.rx
 import android.app.Fragment
 import android.app.FragmentManager
 import io.reactivex.functions.Consumer
+import ru.rovkinmax.devvelatech.decorator.ErrorView
 import ru.rovkinmax.devvelatech.dialog.ErrorMessageDialog
-import ru.rovkinmax.devvelatech.view.ErrorView
 import timber.log.Timber
 
 object RxError {

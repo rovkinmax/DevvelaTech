@@ -1,4 +1,4 @@
-package ru.rovkinmax.devvelatech.view
+package ru.rovkinmax.devvelatech.decorator
 
 import ru.rovkinmax.devvelatech.model.UserMarker
 

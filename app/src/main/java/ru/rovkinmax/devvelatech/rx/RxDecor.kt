@@ -3,9 +3,9 @@ package ru.rovkinmax.devvelatech.rx
 import io.reactivex.*
 import io.reactivex.functions.Consumer
 import org.reactivestreams.Publisher
-import ru.rovkinmax.devvelatech.view.EmptyView
-import ru.rovkinmax.devvelatech.view.ErrorView
-import ru.rovkinmax.devvelatech.view.LoadingView
+import ru.rovkinmax.devvelatech.decorator.EmptyView
+import ru.rovkinmax.devvelatech.decorator.ErrorView
+import ru.rovkinmax.devvelatech.decorator.LoadingView
 import timber.log.Timber
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException

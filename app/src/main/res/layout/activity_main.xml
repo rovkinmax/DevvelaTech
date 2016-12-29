@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
-    <include layout="@layout/toolbar" />
+    <data>
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
+        <variable
+            name="vm"
+            type="ru.rovkinmax.devvelatech.presenter.MainPresenter" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:apiKey="@string/google_maps_key" />
-</LinearLayout>
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:apiKey="@string/google_maps_key"
+            bind:markerList="@{vm.markerList}"
+            bind:onMapReady="@{vm.onMapReadyCallback}" />
+    </LinearLayout>
+</layout>

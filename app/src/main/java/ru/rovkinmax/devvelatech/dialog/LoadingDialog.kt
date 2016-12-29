@@ -9,7 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.support.v7.app.AlertDialog
 import ru.rovkinmax.devvelatech.R
-import ru.rovkinmax.devvelatech.view.LoadingView
+import ru.rovkinmax.devvelatech.decorator.LoadingView
 import java.lang.ref.Reference
 import java.lang.ref.WeakReference
 import java.util.concurrent.atomic.AtomicBoolean

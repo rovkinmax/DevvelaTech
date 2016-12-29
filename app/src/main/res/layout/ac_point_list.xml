@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include layout="@layout/toolbar" />
+    <data>
 
-    <FrameLayout
+        <import type="ru.rovkinmax.devvelatech.R" />
+
+        <variable
+            name="viewModel"
+            type="ru.rovkinmax.devvelatech.presenter.PointListPresenter" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        bind:action="@{R.id.action_load_data}"
+        bind:actionHandler="@{viewModel.actionHandler}">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <include layout="@layout/toolbar" />
 
-        <TextView
-            android:id="@+id/emptyStub"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/points.hint.empty"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text.18"
-            android:visibility="gone"
-            tools:visibility="visible" />
-    </FrameLayout>
-</LinearLayout>
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.markerList.isEmpty() ? View.GONE : View.VISIBLE}"
+                bind:actionHandler="@{viewModel.actionHandler}"
+                bind:markerList="@{viewModel.markerList}" />
+
+            <TextView
+                android:id="@+id/emptyStub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/points.hint.empty"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text.18"
+                android:visibility="@{viewModel.markerList.isEmpty() ? View.VISIBLE : View.GONE}"
+                tools:visibility="visible" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="apply_loader" type="id" />
-    <item name="fetch_loader" type="id" />
-    <item name="save_loader" type="id" />
+    <item name="action.delete" type="id" />
+    <item name="action.load_data" type="id" />
 </resources>

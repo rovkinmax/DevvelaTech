@@ -51,7 +51,7 @@ class LifecycleTransformer<T>(private val observable: Observable<Any>) : Observa
     override fun apply(upstream: Observable<T>): ObservableSource<T> = upstream.takeUntil(observable)
 }
 
-class BundleFragment : Fragment() {
+open class BundleFragment : Fragment() {
     internal val provider = LifecycleProvider()
 
     override fun onCreate(savedInstanceState: Bundle?) {
